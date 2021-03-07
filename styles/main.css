@@ -21,7 +21,8 @@ body {
     background: var(--bg-color);
     color: var(--fg-color);
     font-family: var(--main-font);
-    margin: 0 20% 0 20%;
+    margin: auto;
+    max-width: 72em;
 }
 
 a {
@@ -38,8 +39,4 @@ button:hover {
 
 button:focus {
     outline: 0 !important;
-}
-
-br {
-    color: var(--fg-color);
 }
