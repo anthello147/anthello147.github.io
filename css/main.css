@@ -1,0 +1,53 @@
+:root
+{
+    --accent-color: #0BAB05;
+    --main-font: "monospace";
+}
+
+@media (prefers-color-scheme: light)
+{
+    :root
+    {
+        --bg-color: #FFFFFF;
+        --fg-color: #000000;
+    }
+}
+
+@media (prefers-color-scheme: dark)
+{
+    :root
+    {
+        --bg-color: #202020;
+        --fg-color: #F0F0F0;
+    }
+}
+
+body
+{
+    background: var(--bg-color);
+    color: var(--fg-color);
+    font-family: var(--main-font);
+    margin: auto;
+    max-width: 72em;
+}
+
+a
+{
+    color: var(--accent-color);
+    text-decoration: none;
+}
+
+button
+{
+    border: none;
+}
+
+button:hover
+{
+    cursor: pointer;
+}
+
+button:focus
+{
+    outline: 0 !important;
+}
