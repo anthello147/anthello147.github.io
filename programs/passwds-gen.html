@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>Programs - anthello147.github.io</title>
+        <link rel="stylesheet" type="text/css" href="https://anthello147.github.io/css/main.css">
+        <link rel="shortcut icon" type="image/svg+xml" href="https://anthello147.github.io/ico/favicon.svg">
+    </head>
+    <body>
+        <p><span>
+            [ <a href="https://anthello147.github.io/index.html">Home</a> ]
+            [ <a href="https://anthello147.github.io/programs.html">Programs</a> ]
+            [ <a href="https://anthello147.github.io/articles.html">Articles</a> ]
+            [ <a href="https://anthello147.github.io/tutorials.html">Tutorials</a> ]
+        </span></p>
+        <h1>passwds-gen</h1>
+        <p>
+            A simple command-line program to generate a list of passwords.
+        </p>
+        <p>
+            The GitHub repository for passwds-gen is available
+            <a href="https://github.com/anthello147/passwds-gen">here</a>.
+        </p>
+        <h2>Table of contents</h2>
+        <ul>
+            <li><a href="#releases">
+                Releases
+            </a></li>
+            <li><a href="#requirements">
+                Requirements
+            </a></li>
+            <li><a href="#installation">
+                Installation
+            </a></li>
+            <li><a href="#building-from-source">
+                Building from source
+            </a></li>
+            <ul>
+                <li><a href="#windows">
+                    Windows
+                </a></li>
+                <li><a href="#mac-os-linux-and-freebsd">
+                    Mac OS, Linux, and FreeBSD
+                </a></li>
+            </ul>
+            <li><a href="#usage-examples">
+                Usage examples
+            </a></li>
+        </ul>
+        <h2 id="releases">Releases</h2>
+        <p>
+            No stable releases for passwds-gen are available. For installation
+            instructions see <a href="">Installation</a>.
+        </p>
+        <p>
+            Below are installers for the latest beta release (0.30). Choose the
+            installer for your operating system.
+        </p>
+        <ul>
+            <li><a href="https://github.com/anthello147/passwds-gen/releases/download/win-x86-v0.30-beta/passwds-gen-0.30-beta-setup-win-x86.zip">
+                Windows (x86)
+            </a></li>
+            <li><a href="https://github.com/anthello147/passwds-gen/releases/download/mac-x86_64-v0.30-beta/passwds-gen-0.30-beta-setup-mac-x86_64.zip">
+                Mac OS (x86_64)
+            </a></li>
+            <li><a href="https://github.com/anthello147/passwds-gen/releases/download/linux-x86-v0.30-beta/passwds-gen-0.30-beta-setup-linux-x86.tar.xz">
+                Linux (x86)
+            </a></li>
+            <li><a href="https://github.com/anthello147/passwds-gen/releases/download/freebsd-x86-v0.30-beta/passwds-gen-0.30-beta-setup-freebsd-x86.tar.xz">
+                FreeBSD (x86)
+            </a></li>
+            <li><a href="https://github.com/anthello147/passwds-gen/archive/refs/tags/linux-x86-v0.30-beta.zip">
+                Source code
+            </a></li>
+        </ul>
+        <h2 id="requirements">Requirements</h2>
+        <ul>
+            <li>
+                A computer running Windows, Mac OS, Linux, or FreeBSD (may run
+                on other operating systems; currently these are the only tested
+                platforms)
+            </li>
+            <br>
+            <li>
+                A command-line interface (such as a virtual terminal or a
+                graphical terminal emulator)
+            </li>
+            <br>
+            <li>
+                (If building from source) A C++ compiler
+            </li>
+        </ul>
+        <h2 id="installation">Installation</h2>
+        <p>
+            In the <a href="#releases">releases</a> section, find and download
+            the package for your operating system.
+        </p>
+        <p>
+            On Windows, right-click on the ".bat" file in the extracted package
+            and click "Run as administrator". The installation  process from
+            that point on should be straightforward.
+        </p>
+        <p>
+            On Unix-like systems (Mac OS, Linux, FreeBSD), you will need to open
+            Terminal, and run the following commands as root/administrator,
+            replacing <code>/home/foobar/Downloads</code> with the path of your
+            extracted package:
+        </p>
+        <div class="code">
+            # cd /home/foobar/Downloads<br>
+            # ./passwds-gen-0.30-beta-setup.sh
+        </div>
+        <p>For usage after installation see <a href="#usage-examples">Usage examples</a>.
+        <h2 id="building-from-source">Building from source</h2>
+        <h3 id="windows">Windows:</h3>
+        <p>
+            At the command-line, change your working directory to the location
+            of the downloaded source code (replace
+            <code>C:\Users\foobar\Downloads</code> with the location of your
+            downloaded source code):
+        </p>
+        <div class="code">
+            C:\Users\foobar> cd "C:\Users\foobar\Downloads"
+        </div>
+        <p>Then, compile:</p>
+        <div class="code">
+            C:\Users\foobar\Downloads> g++ passwds-gen.cpp -o passwds-gen.exe
+        </div>
+        <p>
+            After that create the folder <code>passwds-gen</code> in
+            <code>C:\Program Files</code> and move the compiled passwds-gen.exe
+            file to the newly created folder. A dialog may pop up asking for
+            administrative privileges to move the file; agree to this.
+        </p>
+        <p>
+            You will then need to add <code>C:\Program Files\passwds-gen</code>
+            to PATH. You can do this through Control Panel.
+        </p>
+        <h3 id="mac-os-linux-and-freebsd">Mac OS, Linux, and FreeBSD:</h3>
+        <p>
+            At the command-line, change your working directory to the location
+            of the downloaded source code (replace
+            <code>/home/foobar/Downloads</code> with the location of your
+            downloaded source code):
+        </p>
+        <div class="code">
+            $ cd /home/foobar/Downloads
+        </div>
+        <p>Then, compile:</p>
+        <div class="code">
+            $ g++ passwds-gen.cpp -o passwds-gen
+        </div>
+        <p>
+            After that, move the compiled program to <code>/usr/local/bin</code>
+            with root/administrative privilegs:
+        </p>
+        <div class="code">
+            # mv passwds-gen /usr/local/bin/passwds-gen
+        </div>
+        <h2 id="usage-examples">Usage examples</h2>
+        <p>
+            To use passwds-gen, open Terminal/Command Prompt and execute one of
+            the commands shown in the below usage examples. If you are unsure,
+            you can always just type <code>passwds-gen --help</code> into Terminal.
+        </p>
+        <p>
+            Note: do not type in the '$' sign in Terminal/Command Prompt when
+            executing these commands. It is simply there to show the required
+            user privileges.
+        </p>
+        <p>Without command-line flags or options:</p>
+        <div class="code">
+            $ passwds-gen<br>
+            bE78gjjZ
+        </div>
+        <p>When specifying the number of passwords to generate:</p>
+        <div class="code">
+            $ passwds-gen -n 5<br>
+            JpB8BtHP<br>
+            xGiGo5pd<br>
+            ImsxDOGS<br>
+            adSPW5uw<br>
+            nVxQh5xE
+        </div>
+        <p>When specifying the character length of the passwords to generate:</p>
+        <div class="code">
+            $ passwds-gen -l 15<br>
+            nSYixV7E2dWtWjA
+        </div>
+        <p>
+            You can also use both flags simulatenously to specify both the
+            number and length of passwords to generate.
+        </p>
+    </body>
+</html>

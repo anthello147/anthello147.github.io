@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>Install Python on a Chromebook with Miniconda - anthello147.github.io</title>
+        <link rel="stylesheet" type="text/css" href="https://anthello147.github.io/css/main.css">
+        <link rel="shortcut icon" type="image/svg+xml" href="https://anthello147.github.io/ico/favicon.svg">
+    </head>
+    <body>
+        <p><span>
+            [ <a href="https://anthello147.github.io/index.html">Home</a> ]
+            [ <a href="https://anthello147.github.io/programs.html">Programs</a> ]
+            [ <a href="https://anthello147.github.io/articles.html">Articles</a> ]
+            [ <a href="https://anthello147.github.io/tutorials.html">Tutorials</a> ]
+        </span></p>
+        <h1>Install Python on a Chromebook with Miniconda</h1>
+        <p>Published on 2020-10-22. Modified on 2021-03-28.</p>
+        <p>
+            If you're stuck with a Chromebook and you want to develop programs
+            on it using Python while keeping Chrome OS, you can do so by
+            installing Miniconda. However, to do any Python development on your
+            Chromebook locally (without using the internet), you will need to
+            activate Chrome OS Developer Mode. That being said, I strongly
+            recommend you remove Chrome OS and install a proper operating
+            system, such as GNU/Linux. It will save you much stress in the
+            future.
+        </p>
+        <p>
+            Note: For this tutorial I am using Chromium OS, the open-source
+            version of Chrome OS. As such, the steps to install Python with
+            Miniconda may slightly differ on the official Chrome OS.
+        </p>
+        <p>
+            So, reboot the Chromebook and enter Developer Mode. Open the Crosh
+            (<b>C</b>h<b>ro</b>me Developer <b>Sh</b>ell) and type in the
+            command <code>shell</code> to access the hidden Bash shell (as I am
+            using Chromium OS developer build, not Chrome OS, I do not need to
+            enter a developer mode to access the Bash shell).
+        </p>
+        <p>
+            Now, remount <code>tmp</code> as exec (with executable permission):
+        </p>
+        <div class="code">
+            $ sudo mount /tmp -o remount,exec
+        </div>
+        <p>
+            When prompted for a password, type in the password for user chronos.
+            There are (apparently) several different possible default passwords
+            for <code>chronos</code>, including <code>facepunch</code>,
+            <code>password</code>, <code>chrome</code>, <code>localhost</code>,
+            <code>test0000</code>, and a blank password (nothing). In my case it
+            was <code>chrome</code>. If you are using an official Chromebook and
+            have booted into Developer Mode, you should have set a password with
+            <code>chromeos-setdevpasswd</code> when enabling Developer Mode (for
+            more information click
+            <a href="https://support.google.com/pixelslate/thread/983473?hl=en&msgid=1005143">here</a>).
+        </p>
+        <p>
+            After that, download the Miniconda installation script for Linux
+            from the
+            <a href="https://docs.conda.io/en/latest/miniconda.html">Conda website</a>
+            (remember to download the 64-bit version though), change the working
+            directory to the location of the downloaded Miniconda installation
+            script file, run it, and change the install location to a location
+            with write privileges (in my case <code>/usr/local/conda3</code>).
+        </p>
+        <div class="code">
+            $ cd ~/Downloads<br>
+            $ sudo bash ~/Downloads/Miniconda3-latest-Linux-x86_64.sh -p /usr/local/conda3
+        </div>
+        <p>
+            When installation finishes, you must add your Conda installation to PATH:
+        </p>
+        <div class="code">
+            echo "PATH=/usr/local/conda3/bin:$PATH" >> ~/.bashrc
+        </div>
+        <p>
+            Restart the Crosh and enter the Bash shell again. Verify that the
+            directory of the installed Conda binaries is in PATH with
+            <code>echo $PATH</code> and if <code>/usr/local/conda3/bin</code>
+            is in PATH, verify that Python is installed with
+            <code>python3 --version</code>.
+        </p>
+        <p>
+            Now you can install other modules. The installation of Miniconda
+            includes the package manager Conda which specifically installs
+            Python packages (however, there are some other packages available
+            in Conda, such as GCC). Using Conda, you can install Tkinter,
+            PyInstaller, and many other Python packages:
+        </p>
+        <div class="code">
+            $ conda install -c anaconda tk<br>
+            $ conda install -c anaconda pyinstaller
+        </div>
+        <p>
+            Installing PyInstaller works, but it appears that on Chromium OS,
+            there is no such tool as <code>objcopy</code>, meaning that
+            PyInstaller cannot compile any Python scripts, and, as explained
+            in the PyInstaller requirements, <code>ldd</code>,
+            <code>objcopy</code>, and <code>objdump</code> must be installed
+            for PyInstaller to work on Linux installations. The workaround for
+            this is to compile Python scripts with PyInstaller on another Linux
+            computer and then run the compiled script on Chrome/Chromium OS.
+        </p>
+        <p>
+            Also, on newer versions of Chromium OS, graphical Python
+            applications (made with Tkinter, PyQt, etc.) don't run because they
+            don't recognise the system DISPLAY environment variable. The problem
+            is that the entire graphical display of Chrome/Chromium OS is
+            controlled by the Google Chrome web browser program and the web
+            browser runs with no DISPLAY variable, meaning that any GUI program
+            started in the OS by the user (meaning that it would be started by
+            the Chrome browser) would start with no DISPLAY variable.
+        </p>
+        <p>
+            The workaround is to set the DISPLAY variable for the Chrome
+            browser. To do this, you will need to login as root with the command
+            <code>sudo su</code>, as Crosh does not allow editing the file you
+            will need to edit, even with the <code>sudo</code> command. After
+            logging in as root with <code>sudo su</code>, you will need to run
+            the following commands:
+        </p>
+        <div class="code">
+            # mount -o remount,rw /dev/root /<br>
+            # echo "DISPLAY=:0" >> /etc/chrome_dev.conf
+        </div>
+        <p>
+            Then reboot, and now you should be able to run graphical Python
+            programs as well as console Python programs.
+        </p>
+    </body>
+</html>
