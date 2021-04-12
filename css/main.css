@@ -12,6 +12,7 @@
         --fg-color: #000000;
         --mono-light: #F0F0F0;
         --mono-lighter: #E0E0E0;
+        --mono-mid: #707070;
     }
 }
 
@@ -23,6 +24,7 @@
         --fg-color: #F0F0F0;
         --mono-light: #303030;
         --mono-lighter: #404040;
+        --mono-mid: #A0A0A0;
     }
 }
 
@@ -37,8 +39,8 @@ body
     background: var(--bg-color);
     color: var(--fg-color);
     font-family: var(--main-font);
-    margin: auto;
-    max-width: 72em;
+    margin: 20px auto 80px auto;
+    width: 70%;
 }
 
 a
@@ -79,4 +81,10 @@ div.code
     background: var(--mono-light);
     border-radius: 10px;
     padding: 20px;
+}
+
+.dimmed
+{
+    color: var(--mono-mid);
+    font-size: 90%;
 }
