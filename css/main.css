@@ -12,7 +12,7 @@
         --fg-color: #000000;
         --mono-light: #F0F0F0;
         --mono-lighter: #E0E0E0;
-        --mono-mid: #707070;
+        --mono-mid: #606060;
     }
 }
 
@@ -24,7 +24,7 @@
         --fg-color: #F0F0F0;
         --mono-light: #303030;
         --mono-lighter: #404040;
-        --mono-mid: #A0A0A0;
+        --mono-mid: #B0B0B0;
     }
 }
 
@@ -86,5 +86,10 @@ div.code
 .dimmed
 {
     color: var(--mono-mid);
+    font-size: 90%;
+}
+
+.smaller-font
+{
     font-size: 90%;
 }
