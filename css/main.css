@@ -1,7 +1,7 @@
 :root
 {
     --accent-color: #0BAB05;
-    --main-font: monospace, "Courier New", Courier;
+    --main-font: monospace;
 }
 
 @media (prefers-color-scheme: light)
@@ -13,6 +13,10 @@
         --mono-light: #F0F0F0;
         --mono-lighter: #E0E0E0;
         --mono-mid: #606060;
+        --bg-red: #F08080;
+        --bg-yellow: #FFDD90;
+        --bg-green: #80CC80;
+        --bg-blue: #70C0FF;
     }
 }
 
@@ -25,6 +29,10 @@
         --mono-light: #303030;
         --mono-lighter: #404040;
         --mono-mid: #B0B0B0;
+        --bg-red: #800000;
+        --bg-yellow: #806000;
+        --bg-green: #006000;
+        --bg-blue: #004080;
     }
 }
 
@@ -39,6 +47,7 @@ body
     background: var(--bg-color);
     color: var(--fg-color);
     font-family: var(--main-font);
+    font-size: 13pt;
     margin: 20px auto 80px auto;
     width: 70%;
 }
@@ -73,14 +82,45 @@ code
 {
     background: var(--mono-lighter);
     border-radius: 5px;
-    padding: 5px;
+    font-size: 80%;
+    padding: 3px 5px;
 }
 
-div.code
+div
 {
-    background: var(--mono-light);
     border-radius: 10px;
     padding: 20px;
+}
+
+div.plain
+{
+    background: var(--mono-light);
+}
+
+div.red
+{
+    background: var(--bg-red);
+}
+
+div.yellow
+{
+    background: var(--bg-yellow);
+}
+
+div.green
+{
+    background: var(--bg-green);
+}
+
+div.blue
+{
+    background: var(--bg-blue);
+}
+
+div code
+{
+    background: none;
+    font-size: 90%;
 }
 
 .dimmed

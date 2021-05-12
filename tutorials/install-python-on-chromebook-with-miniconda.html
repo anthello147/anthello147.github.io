@@ -40,8 +40,8 @@
         <p>
             Now, remount <code>tmp</code> as exec (with executable permission):
         </p>
-        <div class="code">
-            $ sudo mount /tmp -o remount,exec
+        <div class="plain">
+            <code><b>$</b> sudo mount /tmp -o remount,exec</code>
         </div>
         <p>
             When prompted for a password, type in the password for user chronos.
@@ -64,15 +64,15 @@
             script file, run it, and change the install location to a location
             with write privileges (in my case <code>/usr/local/conda3</code>).
         </p>
-        <div class="code">
-            $ cd ~/Downloads<br>
-            $ sudo bash ~/Downloads/Miniconda3-latest-Linux-x86_64.sh -p /usr/local/conda3
+        <div class="plain">
+            <code><b>$</b> cd ~/Downloads</code><br>
+            <code><b>$</b> sudo bash ~/Downloads/Miniconda3-latest-Linux-x86_64.sh -p /usr/local/conda3</code>
         </div>
         <p>
             When installation finishes, you must add your Conda installation to PATH:
         </p>
-        <div class="code">
-            echo "PATH=/usr/local/conda3/bin:$PATH" >> ~/.bashrc
+        <div class="plain">
+            <code><b>$</b> echo "PATH=/usr/local/conda3/bin:$PATH" >> ~/.bashrc</code>
         </div>
         <p>
             Restart the Crosh and enter the Bash shell again. Verify that the
@@ -88,9 +88,9 @@
             in Conda, such as GCC). Using Conda, you can install Tkinter,
             PyInstaller, and many other Python packages:
         </p>
-        <div class="code">
-            $ conda install -c anaconda tk<br>
-            $ conda install -c anaconda pyinstaller
+        <div class="plain">
+            <code><b>$</b> conda install -c anaconda tk</code><br>
+            <code><b>$</b> conda install -c anaconda pyinstaller</code>
         </div>
         <p>
             Installing PyInstaller works, but it appears that on Chromium OS,
@@ -120,9 +120,9 @@
             logging in as root with <code>sudo su</code>, you will need to run
             the following commands:
         </p>
-        <div class="code">
-            # mount -o remount,rw /dev/root /<br>
-            # echo "DISPLAY=:0" >> /etc/chrome_dev.conf
+        <div class="plain">
+            <code><b>#</b> mount -o remount,rw /dev/root /</code><br>
+            <code><b>#</b> echo "DISPLAY=:0" >> /etc/chrome_dev.conf</code>
         </div>
         <p>
             Then reboot, and now you should be able to run graphical Python

@@ -106,9 +106,9 @@
             replacing <code>/home/foobar/Downloads</code> with the path of your
             extracted package:
         </p>
-        <div class="code">
-            # cd /home/foobar/Downloads<br>
-            # ./passwds-gen-0.30-beta-setup.sh
+        <div class="plain">
+            <code><b>#</b> cd /home/foobar/Downloads</code><br>
+            <code><b>#</b> ./passwds-gen-0.30-beta-setup.sh</code>
         </div>
         <p>For usage after installation see <a href="#usage-examples">Usage examples</a>.
         <h2 id="building-from-source">Building from source</h2>
@@ -119,12 +119,12 @@
             <code>C:\Users\foobar\Downloads</code> with the location of your
             downloaded source code):
         </p>
-        <div class="code">
-            C:\Users\foobar> cd "C:\Users\foobar\Downloads"
+        <div class="plain">
+            <code><b>C:\Users\foobar></b> cd "C:\Users\foobar\Downloads"</code>
         </div>
         <p>Then, compile:</p>
-        <div class="code">
-            C:\Users\foobar\Downloads> g++ passwds-gen.cpp -o passwds-gen.exe
+        <div class="plain">
+            <code><b>C:\Users\foobar\Downloads></b> g++ passwds-gen.cpp -o passwds-gen.exe</code>
         </div>
         <p>
             After that create the folder <code>passwds-gen</code> in
@@ -143,19 +143,19 @@
             <code>/home/foobar/Downloads</code> with the location of your
             downloaded source code):
         </p>
-        <div class="code">
-            $ cd /home/foobar/Downloads
+        <div class="plain">
+            <code><b>$</b> cd /home/foobar/Downloads</code>
         </div>
         <p>Then, compile:</p>
-        <div class="code">
-            $ g++ passwds-gen.cpp -o passwds-gen
+        <div class="plain">
+            <code><b>$</b> g++ passwds-gen.cpp -o passwds-gen</code>
         </div>
         <p>
             After that, move the compiled program to <code>/usr/local/bin</code>
             with root/administrative privilegs:
         </p>
-        <div class="code">
-            # mv passwds-gen /usr/local/bin/passwds-gen
+        <div class="plain">
+            <code><b>#</b> mv passwds-gen /usr/local/bin/passwds-gen</code>
         </div>
         <h2 id="usage-examples">Usage examples</h2>
         <p>
@@ -169,23 +169,23 @@
             user privileges.
         </p>
         <p>Without command-line flags or options:</p>
-        <div class="code">
-            $ passwds-gen<br>
-            bE78gjjZ
+        <div class="plain">
+            <code><b>$</b> passwds-gen</code><br>
+            <code>bE78gjjZ </code>
         </div>
         <p>When specifying the number of passwords to generate:</p>
-        <div class="code">
-            $ passwds-gen -n 5<br>
-            JpB8BtHP<br>
-            xGiGo5pd<br>
-            ImsxDOGS<br>
-            adSPW5uw<br>
-            nVxQh5xE
+        <div class="plain">
+            <code><b>$</b> passwds-gen -n 5</code><br>
+            <code>JpB8BtHP</code><br>
+            <code>xGiGo5pd</code><br>
+            <code>ImsxDOGS</code><br>
+            <code>adSPW5uw</code><br>
+            <code>nVxQh5xE</code>
         </div>
         <p>When specifying the character length of the passwords to generate:</p>
-        <div class="code">
-            $ passwds-gen -l 15<br>
-            nSYixV7E2dWtWjA
+        <div class="plain">
+            <code><b>$</b> passwds-gen -l 15</code><br>
+            <code>nSYuxV7E2dWtWjA </code>
         </div>
         <p>
             You can also use both flags simulatenously to specify both the
