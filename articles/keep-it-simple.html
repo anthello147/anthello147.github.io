@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>Keep It Simple, Stupid - anthello147.github.io</title>
+        <link rel="stylesheet" type="text/css" href="https://anthello147.github.io/css/main.css">
+        <link rel="shortcut icon" type="image/svg+xml" href="https://anthello147.github.io/ico/favicon.svg">
+    </head>
+    <body>
+        <p><span>
+            [ <a href="https://anthello147.github.io/index.html">Home</a> ]
+            [ <a href="https://anthello147.github.io/programs.html">Programs</a> ]
+            [ <a href="https://anthello147.github.io/articles.html">Articles</a> ]
+            [ <a href="https://anthello147.github.io/tutorials.html">Tutorials</a> ]
+        </span></p>
+        <h1>Keep It Simple, Stupid</h1>
+        <p class="dimmed">Published on 2021-05-30.</p>
+        <p>
+            Too many things in everyday life, around the world, are made overly
+            complicated, sometimes for no reason at all. It makes things hard to
+            understand and navigate. It introduces problems, wastes time, gives
+            stress, and over time these problems accumulate, and the greater
+            complexity grows, the more these problems grow. It becomes
+            impossible to manage or control anything, and in the end it is
+            probably better to start anything that has spiralled out of control
+            due to the sheer complexity anew.
+        </p>
+        <p>
+            It is seen time and time again in almost all software in existence.
+            As more and more
+            <a href="https://en.wikipedia.org/wiki/Feature_creep">features creep into the code</a>,
+            the software becomes more and more complex. It becomes much more
+            difficult to manage, harder to navigate, harder to read, harder to
+            understand. Security issues are overlooked, bugs and other issues
+            become harder to find and diagnose. The software developers (often
+            frontend developers do this) push in more and more features,
+            thinking that it makes end users' lives easier, that it will
+            increase compatibility for other software and platforms, and other,
+            similar traps. Sometimes developers will even add new features for
+            absolutely nonsensical things like for the sake of change, or
+            because they think that the piece of software is not advanced
+            enough.
+        </p>
+        <p>
+            And then it gets so out of control that the software is so bloated
+            that it <i>really</i> starts to affect end users. I'm not even
+            talking about software like Mozilla Firefox, which, although is, in
+            my experience, way too bloated, the quality of today's hardware is
+            enough to sustain Firefox in a way that makes the end user not
+            notice the horrible bloat in Firefox. I'm talking about software
+            which is so bloated that it is visibly noticeable on good hardware,
+            like most websites on the Internet if your web browser runs the
+            JavaScript they burden your computer with. They simply lag so much
+            that a lot of the time they don't load, or take a <i>really</i>
+            long time to load.
+        </p>
+        <p>
+            That's not to say bloated software like Firefox isn't inexcusable.
+            In fact, most bloatware developers (that is correct, <i>bloatware
+            developers</i>) always have the excuse that 'it doesn't matter if
+            software is bloated, modern hardware will support it'. From first
+            glance it is obvious to any person, technology-based background or
+            not, that this is utter stupidity. Software should not be designed
+            or made poorly in the first place. Making excuses for poor decisions
+            is not good either. Software should be kept as simple as possible,
+            for both the makers, other developers, and the end user, so that
+            everyone would be happy.
+        </p>
+        <p>
+            A typical end user who is not familiar with the severity of this
+            problem can't simply imagine how bad the situation is without a
+            clear representation in front of them. Let me give you an example.
+        </p>
+        <p>
+            Let's say you were sitting at a console (in Windows, this can be
+            the Command Prompt, on macOS and Linux this can be the Terminal),
+            where any interaction is done using what is called a CLI, or a
+            <i>command-line interface</i>. You are given a prompt (in the
+            example below it is the '$' symbol), and usually, there is a
+            blinking cursor and you can type commands. Upon hitting the
+            enter/return key, the command executes, placing any output below,
+            like the <code>echo</code> command:
+        </p>
+        <div class="plain">
+            <code><b>$</b> echo Hello, World!</code><br>
+            <code>Hello, World!</code>
+        </div>
+        <p>
+            As shown in the above example, the <code>echo</code> command does
+            one simple thing: output everything written in the line below. In
+            the C programming language, the program for the <code>echo</code>
+            command would look as simple as like this:
+        </p>
+        <div class="plain">
+            <code>#include &lt;stdio.h&gt;</code><br>
+            <code>#include &lt;string.h&gt;</code><br><br>
+            <code>int main(int argc, char *argv[])</code><br>
+            <code>{</code><br>
+            <code>&nbsp;&nbsp;&nbsp;&nbsp;for (int i = 1; i &lt; argc; i++)</code><br>
+            <code>&nbsp;&nbsp;&nbsp;&nbsp;{</code><br>
+            <code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;printf(argv[i]);</code><br>
+            <code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if (i != argc - 1) putchar(' ');</code><br>
+            <code>&nbsp;&nbsp;&nbsp;&nbsp;}</code><br><br>
+            <code>&nbsp;&nbsp;&nbsp;&nbsp;putchar('\n');</code><br>
+            <code>}</code>
+        </div>
+        <p>
+            Simple, easy to read, and no harm done! A simple 13 lines for a
+            simple program. However, the same command is somehow 32 lines in
+            OpenBSD, 112 lines in FreeBSD, and a whopping 273 in the GNU
+            project! The GNU version so big that I didn't want to include it in
+            this article. Want to see? Here is the link:
+            <a href="https://github.com/coreutils/coreutils/blob/master/src/echo.c">https://github.com/coreutils/coreutils/blob/master/src/echo.c</a>.
+        </p>
+        <p>
+            Horrendous! Do you <i>really</i> need that much code for a simple
+            command that outputs a line of text? Really? And to think - every
+            piece of software in your computer is inflated to such massive
+            sizes and then topped up with so much bloat that your hardware
+            starts complaining. Complexity is the bane of all software, and
+            lots of software grows and grows to insane sizes.
+            This makes life hard for both the makers, other developers, and the
+            end users. Software developers should really reconsider how they
+            develop software, and should really focus on efficiency, code
+            readability, and above all, and this is most important - simplicity.
+        </p>
+        <p>
+            Keep it simple, stupid.
+        </p>
+    </body>
+</html>
