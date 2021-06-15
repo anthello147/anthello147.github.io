@@ -92,13 +92,12 @@
             command would look as simple as like this:
         </p>
         <div class="plain">
-            <code>#include &lt;stdio.h&gt;</code><br>
-            <code>#include &lt;string.h&gt;</code><br><br>
+            <code>#include &lt;stdio.h&gt;</code><br><br>
             <code>int main(int argc, char *argv[])</code><br>
             <code>{</code><br>
             <code>&nbsp;&nbsp;&nbsp;&nbsp;for (int i = 1; i &lt; argc; i++)</code><br>
             <code>&nbsp;&nbsp;&nbsp;&nbsp;{</code><br>
-            <code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;printf(argv[i]);</code><br>
+            <code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;printf("%s", argv[i]);</code><br>
             <code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if (i != argc - 1) putchar(' ');</code><br>
             <code>&nbsp;&nbsp;&nbsp;&nbsp;}</code><br><br>
             <code>&nbsp;&nbsp;&nbsp;&nbsp;putchar('\n');</code><br>
